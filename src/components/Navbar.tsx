@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
     return (
-        <div className="navbar bg-base-100 shadow-md rounded-lg ">
+        <div className="navbar bg-transparent shadow-sm">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -23,7 +24,7 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
+        <li><a>Home</a></li>
         <li>
           <a>Parent</a>
           <ul className="p-2">
@@ -34,12 +35,12 @@ const Navbar = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <Image src='https://i.pinimg.com/736x/d9/a8/d9/d9a8d9bbd5227a4abd1c5d4e250e1ef6.jpg' width={50} height={50} className='rounded-lg' alt='tripnest'/>
+    <Image src='https://i.pinimg.com/736x/d9/a8/d9/d9a8d9bbd5227a4abd1c5d4e250e1ef6.jpg' width={40} height={40} className='rounded-full' alt='tripnest'/>
     <a className="btn btn-ghost text-xl">Tripnest</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
+      <li><Link href='/'>Home</Link></li>
       <li>
         <details>
           <summary>Parent</summary>
@@ -49,11 +50,13 @@ const Navbar = () => {
           </ul>
         </details>
       </li>
-      <li><a>Item 3</a></li>
+      <li><a>Gallery</a></li>
     </ul>
   </div>
-  <div className="navbar-end">
-    <button className='btn btn-warning'>Login</button>
+  <div className="navbar-end flex gap-2">
+  <button className='btn btn-accent btn-outline text-white rounded-full px-5'><Link href='/login'>Login </Link></button>
+  <button className='btn btn-accent btn-outline text-white rounded-full px-5'><Link href='/dashboard'>dashboard </Link></button>
+   
   </div>
 </div>
     );
